@@ -8,4 +8,4 @@ Install dependencies
 
 npm install or yarn add
 
-Run the application using npm run dev or yarn run dev
+Run the application using npm run dev or yarn run dev.
