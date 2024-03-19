@@ -8,14 +8,14 @@ const config = {
 };
 
 const getDailyForecast = (extraConfig) => {
-  return axios.get("http://api.openweathermap.org/data/2.5/forecast", {
+  return axios.get("https://api.openweathermap.org/data/2.5/forecast", {
     ...config,
     ...extraConfig,
   });
 };
 
 const getGeocoding = (extraConfig) => {
-  return axios.get("http://api.openweathermap.org/geo/1.0/direct", {
+  return axios.get("https://api.openweathermap.org/geo/1.0/direct", {
     ...config,
     ...extraConfig,
   });
