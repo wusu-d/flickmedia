@@ -136,10 +136,10 @@ const WeatherPage = ({ longitude, latitude }) => {
           message="Something went wrong"
         />
       )}
-      <div className="flex gap-1 bg-[#4a919e] text-white py-4 px-2  md:px-4 rounded-md shadow-md">
-        <div className="flex flex-col justify-between w-1/3">
-          <span className="flex gap-2">
-            {city}, {country}{" "}
+      <div className="flex flex-col gap-4 bg-[#4a919e] text-white py-4 px-2  md:px-4 rounded-md shadow-md">
+        <div>
+          <span className="flex gap-4">
+            {city}, {country}
             <select
               value={unit}
               onChange={handleSelectChange}
@@ -149,37 +149,45 @@ const WeatherPage = ({ longitude, latitude }) => {
               <option value="imperial">Farenheit</option>
             </select>
           </span>
-          <h5 className="text-3xl md:text-4xl">
-            {Math.floor(temp)}°{unit === "metric" ? "C" : "F"}
-          </h5>
-          <span className="text-xs md:text-base font-light capitalize flex flex-col-reverse gap-1">
-            {weatherObject?.description}{" "}
-            <span className="font-normal">
-              {weatherHelper(weatherObject?.id).icon}
-            </span>
-          </span>
         </div>
-        <div className="flex justify-between gap-1 w-2/3 mt-12">
-          <div className="bg-[#212e53] basis-1/3 py-4 px-2 text-white text-xs rounded-2xl flex flex-col items-center text-center ">
-            <span className="mb-3 flex items-center justify-center shadow-md rounded-sm">
-              <WiHumidity color="#ce6a6b" size={20} />
-            </span>
-            <span>Humidity</span>
-            <span className="text-sm">{humidity}%</span>
+
+        <div className="flex justify-between gap-1 items-center ">
+          <div className="flex flex-col gap-4 justify-between">
+            <h5 className="text-3xl md:text-4xl basis-1/3">
+              {Math.floor(temp)}°{unit === "metric" ? "C" : "F"}
+            </h5>
+            <div>
+              <span className="text-xs md:text-base font-light capitalize flex flex-col-reverse gap-1">
+                {weatherObject?.description}{" "}
+                <span className="font-normal">
+                  {weatherHelper(weatherObject?.id).icon}
+                </span>
+              </span>
+            </div>
           </div>
-          <div className="bg-[#212e53] basis-1/3 py-4 px-2 text-white text-xs rounded-2xl flex flex-col items-center text-center ">
-            <span className="mb-3 flex items-center justify-center shadow-md rounded-sm">
-              <MdVisibility color="#ce6a6b" size={20} />
-            </span>
-            <span>Visibility</span>
-            <span className="text-sm">{visibility}km</span>
-          </div>
-          <div className="bg-[#212e53] basis-1/3 py-4 px-2 text-white text-xs rounded-2xl flex flex-col items-center text-center ">
-            <span className="mb-3 flex items-center justify-center shadow-md rounded-sm">
-              <FiWind color="#ce6a6b" size={20} />
-            </span>
-            <span className="text-xs">Wind </span>
-            <span className="text-sm">{Math.round(windKMH)}km/h</span>
+
+          <div className="flex gap-2 basis-2/3 ">
+            <div className="bg-[#212e53] basis-1/3 py-4 px-2 text-white text-xs rounded-2xl flex flex-col items-center text-center ">
+              <span className="mb-3 flex items-center justify-center shadow-md rounded-sm">
+                <WiHumidity color="#ce6a6b" size={20} />
+              </span>
+              <span>Humidity</span>
+              <span className="text-sm">{humidity}%</span>
+            </div>
+            <div className="bg-[#212e53] basis-1/3 py-4 px-2 text-white text-xs rounded-2xl flex flex-col items-center text-center ">
+              <span className="mb-3 flex items-center justify-center shadow-md rounded-sm">
+                <MdVisibility color="#ce6a6b" size={20} />
+              </span>
+              <span>Visibility</span>
+              <span className="text-sm">{visibility}km</span>
+            </div>
+            <div className="bg-[#212e53] basis-1/3 py-4 px-2 text-white text-xs rounded-2xl flex flex-col items-center text-center ">
+              <span className="mb-3 flex items-center justify-center shadow-md rounded-sm">
+                <FiWind color="#ce6a6b" size={20} />
+              </span>
+              <span className="text-xs">Wind </span>
+              <span className="text-sm">{Math.round(windKMH)}km/h</span>
+            </div>
           </div>
         </div>
       </div>
