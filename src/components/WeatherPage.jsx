@@ -138,8 +138,10 @@ const WeatherPage = ({ longitude, latitude }) => {
       )}
       <div className="flex flex-col gap-4 bg-[#4a919e] text-white py-4 px-2  md:px-4 rounded-md shadow-md">
         <div>
-          <span className="flex gap-4">
-            {city}, {country}
+          <div className="flex gap-4">
+            <div>
+              {city}, {country}
+            </div>
             <select
               value={unit}
               onChange={handleSelectChange}
@@ -148,7 +150,7 @@ const WeatherPage = ({ longitude, latitude }) => {
               <option value="metric">Celcius</option>
               <option value="imperial">Farenheit</option>
             </select>
-          </span>
+          </div>
         </div>
 
         <div className="flex justify-between gap-1 items-center ">
