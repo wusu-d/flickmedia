@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## FlickMedia Weather App
 
+https://flickweatherapp.netlify.app/
+
 First clone the repository to your local machine
 
 Install dependencies
