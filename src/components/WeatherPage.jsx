@@ -25,6 +25,7 @@ import { FiWind } from "react-icons/fi";
 import { weatherHelper } from "@/utils/weatherHelper";
 import Overlay from "./Overlay";
 
+//MAIN APPLICATION PAGE
 const WeatherPage = ({ longitude, latitude }) => {
   const dispatch = useDispatch();
   const [isError, setIsError] = useState(false);
@@ -96,6 +97,7 @@ const WeatherPage = ({ longitude, latitude }) => {
     }
   };
 
+  //GET THE WEATHER DATA AND STORE IN A REDUX SLICE
   useEffect(() => {
     const fetchDailyForecast = async () => {
       try {

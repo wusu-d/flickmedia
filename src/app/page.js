@@ -15,6 +15,7 @@ export default function Home() {
     setIsError(false);
   };
 
+  //ASK FOR THE USERS LOCATION PERMISSION AND MOVE AWAY FROM THE SPLASH SCREEN
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -45,7 +46,10 @@ export default function Home() {
       )}
       {step === 0 && <WelcomePage />}
       {step === 1 && (
-        <WeatherPage longitude={coords.longitude} latitude={coords.latitude} />
+        <WeatherPage
+          longitude={coords?.longitude}
+          latitude={coords?.latitude}
+        />
       )}
     </main>
   );
