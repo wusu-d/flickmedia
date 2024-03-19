@@ -216,7 +216,7 @@ const WeatherPage = ({ longitude, latitude }) => {
           <DailyWeatherIcon deg={"21*"} weatherIcon={"🌧"} day={"17 Mar"} /> */}
         </div>
       </div>
-      <div className="rounded-md mt-4 px-2  md:px-4py-4 bg-white shadow-md flex flex-col h-auto">
+      <div className="rounded-md mt-4 px-2 md:px-4 py-4 bg-white shadow-md flex flex-col h-auto">
         <span className="font-medium">Daily Forecast</span>
 
         <div className="flex justify-between mt-4 gap-2">
